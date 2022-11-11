@@ -1,4 +1,3 @@
-
 $(window).scroll(function(){
     scroll_barra();
 });
@@ -70,43 +69,20 @@ document.addEventListener( 'DOMContentLoaded', function () {
    if ( $( "#banner-slider" ).length ) {
 
        new Splide( '#banner-slider', {
-
-           //Clase para cambiar el svg que quieras, CUIDADO, solo medidas de 40x40px
-           //        arrowPath: 'M39.7,19.4L27.3,6.9c-0.3-0.3-0.9-0.3-1.2,0s-0.3,0.9,0,1.2l11.1,11.1H0.9C0.4,19.2,0,19.5,0,20s0.4,0.8,0.8,0.8h36.3L26.1,31.9c-0.3,0.3-0.3,0.9,0,1.2c0.2,0.2,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l12.5-12.5C40.1,20.3,40.1,19.7,39.7,19.4z',
-
-           // Se mueva de manera automática, si está en hover no cuenta el tiempo y no se mueve
            autoplay: true,
-
-           // intervalo de tiempo de movimiento
            interval: 3000,
-
-           // para que gire
            type: "fade",
-
-           // Esta propiedad sirve de rebonidador. Esta opción se ignora en el modo "loop"
            rewind: true,
-
-           //el movimiento sea de 1
            perMove: 1,
-
-           // muestra 1 elementos por página 
            perPage: 1,
-
-           // bolitas que muestran la cantidad de páginas
            pagination: false,
-
-           // Felchas desactivada
            arrows: false,
-
-           // Clases para hacer cambios en las flechas
            classes: {
                arrows: 'splide__arrows your-class-arrows',
                arrow : 'splide__arrow crece_svg',
                prev  : 'splide__arrow--prev your-class-prev',
                next  : 'splide__arrow--next your-class-next',
            },
-
-
        } ).mount();
    }
    if ( $( "#banner-central" ).length ) {
