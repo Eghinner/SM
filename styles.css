@@ -206,13 +206,11 @@ header {
     gap: 10px;
 }
 
-.superior .alineado>li:first-child::before {
-    content: unset;
+#punto{
+    color: var(--primario);
 }
-
 .superior .alineado>li::before {
     content: "\2022";
-    color: #f5f4f4;
     font-weight: bold;
     display: inline-block;
     width: 2em;
@@ -339,7 +337,7 @@ header {
     border-radius: 20px !important;
     border: unset;
     width: 248px;
-    padding: 10px 0 20px;
+    padding: 10px 25px 20px;
     background-color: #45ac34;
     top: calc(100% + 7px);
     overflow: hidden;
@@ -348,7 +346,7 @@ header {
 }
 
 .menu_principal .dropdown-menu>li>a {
-    padding: 12px 25px;
+    padding: 15px 0;
     font-size: 16px;
     font-family: "Blinker";
     color: #FFF;
@@ -364,7 +362,8 @@ header {
 }
 
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: transparent;
+    text-shadow: 0 0 5px #FFF;
 }
 
 .navbar-default .navbar-nav>li>a:focus,
@@ -493,32 +492,46 @@ header {
     gap: 40px;
 }
 
-.servicios .card {
+.bloqueServicios .servicios .card {
     width: 270px;
     height: 420px;
     border-radius: 25px;
-    box-shadow: 0 0 0 2px #45ac34,
-                0 0 0 9px #FFF;
+    background-image: linear-gradient(0deg, #00783f 0%, #45ac34 100%);
+    background-image: none;
+    background-color: #FFF;
     filter: drop-shadow(0px 0px 7.5px rgba(0,0,0,0.1));
 }
 
-.servicios .card:hover {
-    box-shadow: 0 0 0 2px #fff,
-                0 0 0 9px #45ac34;
+.bloqueServicios .servicios .card:hover {
     background-image: linear-gradient(0deg, #00783f 0%, #45ac34 100%);
     transform: scale(1) !important;
 }
 
 .servicios .caption {
+    padding: 0 20px;
+    transition: all 0.3s;
+    height: calc(100% - 6px);
     display: flex;
     flex-flow: column;
     justify-content: center;
-    height: calc(100% - 40px);
-    border-radius: 25px;
-    margin: 20px 0;
-    padding: 0 20px;
+
+}
+
+.bloqueServicios .servicios .caption {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(202deg, #45ac34 0%, #00783f 100%)border-box;
+    width: calc(100% - 7px);
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bloqueServicios .servicios .card:hover .caption {
+    border: solid 2px #FFF;
     background-image: none;
-    transition: all 0.3s;
 }
 
 .servicios .forma_circle {
@@ -1179,6 +1192,10 @@ footer .gradient {
 
 .info__content a {
     color: white;
+    text-align: center;
+}
+.info__content a>span{
+    align-self: flex-start;
 }
 
 .info__content a:hover {
@@ -1190,6 +1207,10 @@ footer .gradient {
     margin-right: 12px;
     width: 25px;
     height: 25px;
+}
+
+.info__content>ul>li>a>span>  .iconException{
+    margin-left: 0;
 }
 
 .footer__img {
@@ -1232,7 +1253,7 @@ footer .gradient {
     row-gap: 10px;
     flex-flow: wrap;
     background-color: #00783f;
-    padding: 10px;
+    padding: 20px 10px;
     font-size: 12px;
     color: #FFF;
 }
@@ -1519,10 +1540,14 @@ footer .gradient {
         padding-top: 60px;
         padding-bottom: 20px;
     }
+    .info__content>ul>li>a>span>  .iconException{
+        margin-left: 10px;
+    }
 
     footer {
         background-size: 150%;
     }
+    
 
     .footer__img {
         margin-bottom: 20px
